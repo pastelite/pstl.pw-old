@@ -1,53 +1,51 @@
 <script lang="ts">
-    import Bottombar from '$lib/bottombar.svelte';
-import bottombar from '$lib/bottombar.svelte'
+	import Bottombar from '$lib/bottombar.svelte';
+	import setNumber from '$lib/utils';
+	import { fade } from 'svelte/transition';
 
-    let title: string = "pastelite";
+	let title: string = 'pastelite';
+
+	setNumber(0);
 </script>
 
-<div class="center-container">
-    <div id="pastelite">{title}.</div>
-    <div>Hi I'm pastelite, a shitty hobby code-writer</div>
-    <div>read more i think ></div>
+<link href="./fontawesome/css/all.min.css" rel="stylesheet" />
+<div>Hi I'm</div>
+<div id="pastelite">
+	{title}.
+	<div id="link">
+		<a href="https://github.com/pastelite" class="fab fa-github" />
+	</div>
 </div>
-<Bottombar/>
+<div>and welcome to my shitty personal website</div>
+<a href="./about">read more i think ></a>
 
 <style lang="scss">
-    :global(body) {
-        font-family: "Fredoka", sans-serif;
-        background-color: #01172F;
-        color: white;
-        overflow:hidden
-    }
+	#pastelite {
+		font-size: 15vw;
+		color: #74b3ce;
+		margin: 0;
 
-    .center-container {
-        position: absolute;
-        top:0;
-        left: 0;
-        width:min-content;
-        height: 100%;
-        padding-left: 5%;
-        box-sizing: border-box;
+		//overflow:hidden;
+		height: 1.5em;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: left;
+		position: relative;
+		//margin-top: 30%;
+		//color: white;
+	}
 
-        div {
-            margin: 1em 2em;
-            text-align: justify;
-            font-size: max(1.5vw,1em);
-        }
-    }
+	#link {
+		position: absolute;
+		bottom: 1vh;
+		right: 0;
+		display: flex;
+		justify-content: flex-end;
+		margin: 0;
+		font-size: 0.25em;
 
-    #pastelite {
-        font-size: 15vw;
-        color: #74B3CE;
-        margin: 0;
-        overflow:hidden;
-        height: min-content;
-        //margin-top: 30%;
-        //color: white;
-    }
+		a {
+			margin: 0 10px;
+			text-decoration: none;
+			color: inherit;
+		}
+	}
 </style>
